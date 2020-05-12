@@ -1,0 +1,15 @@
+.Container {
+  height: 200px;
+  position: relative;
+  border: 2px solid green;
+  padding: 10px;
+}
+
+.Vertical-Center {
+  margin: 0;
+  position: absolute;
+  top: 20%;
+  left: 30%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}

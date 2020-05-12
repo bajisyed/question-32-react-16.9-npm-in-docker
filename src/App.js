@@ -1,24 +1,32 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
-function App() {
+import Addition from './Components/Addition/Addition';
+
+const App = props => {
+
+  const additionHandler = () => {
+    const num1 = Number(document.querySelector('#Text1').value);
+    const num2 = Number(document.querySelector('#Text2').value);
+    const sum = num1 + num2;
+    document.querySelector('#txtresult').value = sum;
+  }
+
+  const dataChangeHandler = () => {
+   if(Number(document.querySelector('#Text1').value) !== 0 || Number(document.querySelector('#Text2').value) !== 0){
+    document.querySelector('#clickbtn').disabled = false;
+   } else {
+    document.querySelector('#clickbtn').disabled = true;
+   }
+  }
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Addition 
+        addMethod={additionHandler} 
+        dataChanged={dataChangeHandler}
+        />
     </div>
   );
 }
