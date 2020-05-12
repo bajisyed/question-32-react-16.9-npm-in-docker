@@ -27,7 +27,7 @@ const Addition = (props) => {
             </div>
             <br/>
             <div name="clickbtn">
-                <input type="button" value="Display Result" name="clickbutton" onClick={props.addMethod}/>
+                <input type="button" value="Display Result" name="clickbutton" onClick={props.addMethod} disabled/>
             </div>
         </div>
     );
